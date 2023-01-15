@@ -30,3 +30,14 @@ services:
       DEVELOPMENT: true
     working_dir: /app
     command: yarn start:dev
+
+  webapp:
+    build:
+      context: ./src/webapp
+      dockerfile: ./Dockerfile.development
+    volumes:
+      - ./src/webapp:/app
+    ports:
+      - 4200:4200
+    working_dir: /app
+    command: yarn start:dev
