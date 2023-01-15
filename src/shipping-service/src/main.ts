@@ -8,6 +8,7 @@ import { DbContext } from './Infrastructure/DbContext';
 async function bootstrap() {
   await DbContext.initialize();
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,

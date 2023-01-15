@@ -27,7 +27,7 @@ export class Parcel {
   country: string;
 
   @Column({ type: 'timestamp', nullable: false })
-  deliveryDate: string;
+  deliveryDate: Date;
 
   @CreateDateColumn()
   createdAt: Date;
