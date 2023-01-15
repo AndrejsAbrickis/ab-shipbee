@@ -5,7 +5,11 @@ ab-shipbee project consist of the following services
 * webapp - Shipping service Web client running on Angular
 
 # Setup instructions
-To run all services in development mode run the following command in terminal
+To run all services in development mode run the following command in terminal which will start all services as docker containers
 ```bash
 docker-compose up -d
 ```
+
+# ToDo
+- [ ] Improve API exception responses
+- [ ] Refactor the repository usage into Query objects

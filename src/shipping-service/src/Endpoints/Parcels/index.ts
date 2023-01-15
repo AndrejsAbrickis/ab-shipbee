@@ -1,11 +1,9 @@
-import { ParcelsCreateHandler } from './Create';
-import { ParcelsGetHandler } from './Get';
-import { ParcelsSearchHandler } from './Search';
+import { ParcelsCreateHandler } from './ParcelsCreateHandler';
+import { ParcelsGetHandler } from './ParcelsGetHandler';
+import { ParcelsSearchHandler } from './ParcelsSearchHandler';
 
-const ParcelsHandlers = [
+export const ParcelsHandlers = [
   ParcelsGetHandler,
   ParcelsCreateHandler,
   ParcelsSearchHandler,
 ];
-
-export { ParcelsHandlers };

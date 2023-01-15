@@ -21,10 +21,12 @@ services:
     ports:
       - 3900:3900
     environment:
-      MYSQL_USER: root
-      MYSQL_PASSWORD: example
-      MYSQL_DB: ab-shipbee
-      MYSQL_HOST: db
+      DB_USER: root
+      DB_PASSWORD: example
+      DB_DATABASE: ab-shipbee
+      DB_HOST: db
+      DB_PORT: 3306
       PORT: 3900
+      DEVELOPMENT: true
     working_dir: /app
     command: yarn start:dev
