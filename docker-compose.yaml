@@ -1,0 +1,30 @@
+version: '3.1'
+
+name: ab-shipbee
+
+services:
+  db:
+    image: mariadb:10.10.2
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: ab-shipbee
+
+  api:
+    build:
+      context: ./src/shipping-service
+      dockerfile: ./Dockerfile.development
+    volumes:
+      - ./src/shipping-service:/app
+    ports:
+      - 3900:3900
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: example
+      MYSQL_DB: ab-shipbee
+      MYSQL_HOST: db
+      PORT: 3900
+    working_dir: /app
+    command: yarn start:dev
