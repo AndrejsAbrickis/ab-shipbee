@@ -1,32 +1,28 @@
-<div class="">
-  <table
-    class="w-full border-collapse bg-white text-left text-sm text-gray-500"
-  >
-    <thead class="bg-gray-50">
-      <tr>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">SKU</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-          Description
-        </th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-          Street Address
-        </th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">City</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Country</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-          Delivery Date
-        </th>
-      </tr>
-    </thead>
-    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-      <tr *ngFor="let parcel of (parcelsResponse | async)?.parcels">
-        <th class="px-6 py-4 font-medium text-gray-900">{{ parcel.sku }}</th>
-        <td class="px-6 py-4">{{ parcel.description }}</td>
-        <td class="px-6 py-4">{{ parcel.streetAddress }}</td>
-        <td class="px-6 py-4">{{ parcel.city }}</td>
-        <td class="px-6 py-4">{{ parcel.country }}</td>
-        <td class="px-6 py-4">{{ parcel.deliveryDate }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+  <thead class="bg-gray-50">
+    <tr>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">SKU</th>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+        Description
+      </th>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+        Street Address
+      </th>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">City</th>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">Country</th>
+      <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+        Delivery Date
+      </th>
+    </tr>
+  </thead>
+  <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+    <tr *ngFor="let parcel of (parcelsResponse | async)?.parcels">
+      <th class="px-6 py-4 font-medium text-gray-900">{{ parcel.sku }}</th>
+      <td class="px-6 py-4">{{ parcel.description }}</td>
+      <td class="px-6 py-4">{{ parcel.streetAddress }}</td>
+      <td class="px-6 py-4">{{ parcel.city }}</td>
+      <td class="px-6 py-4">{{ parcel.country }}</td>
+      <td class="px-6 py-4">{{ parcel.deliveryDate }}</td>
+    </tr>
+  </tbody>
+</table>
