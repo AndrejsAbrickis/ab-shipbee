@@ -14,4 +14,8 @@ docker-compose up -d
 - [ ] Improve API exception responses
 - [ ] Refactor the repository usage into Query objects
 - [ ] Implement Responsive UI (currently supports desktop mode only)
+- [ ] Implement New Parcel form validation
+- [ ] Cover API endpoints, DB queries with integration tests
+- [ ] Cover Client-Side APP with E2E tests
+- [ ] Implement Parcel list sorting
 
