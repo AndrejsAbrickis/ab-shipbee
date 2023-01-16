@@ -1,9 +1,13 @@
 <section class="min-h-full bg-gray-100">
   <app-header title="Parcels" (addNewSku)="toggleNewSkuFormVisibility()"/>
   <main class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+    <parcel-filters (search)="searchParcels($event)"/>
     <div class="px-4 py-6 sm:px-0">
-      <parcels />
+      <parcels [parcels]="(parcelsResponse | async)?.parcels ?? []"/>
     </div>
   </main>
-  <drawer *ngIf="isNewSkuFormVisible" (close)="toggleNewSkuFormVisibility()"/>
+  <drawer *ngIf="isNewSkuFormVisible" (close)="toggleNewSkuFormVisibility()">
+    <new-parcel-form (cancel)="toggleNewSkuFormVisibility()" (complete)="getParcels()"/>
+  </drawer>
+
 </section>

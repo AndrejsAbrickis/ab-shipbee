@@ -6,6 +6,4 @@ export class Parcel {
   city: string | undefined;
   country: string | undefined;
   deliveryDate: string | undefined;
-  createdAt: Date | undefined;
-  updatedAt: Date | undefined;
 }
