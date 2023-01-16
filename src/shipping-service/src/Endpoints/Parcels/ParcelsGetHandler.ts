@@ -12,7 +12,9 @@ export class ParcelsGetHandler extends RepositoryAwareHandler<Parcel> {
   @Get()
   async index(): Promise<Record<string, Parcel[]> | HttpException> {
     try {
-      const parcels = await this.repository.find();
+      const parcels = await this.repository.find({
+        order: { deliveryDate: 'DESC' },
+      });
 
       return { parcels };
     } catch {

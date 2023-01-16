@@ -1,4 +1,4 @@
-import { BadRequestException, HttpException } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus } from '@nestjs/common';
 import { Body, Controller, Post } from '@nestjs/common/decorators';
 import { Parcel } from 'src/Entities/Parcel';
 import { RepositoryAwareHandler } from '../RepositoryAwareHandler';
@@ -15,6 +15,10 @@ export class ParcelsCreateHandler extends RepositoryAwareHandler<Parcel> {
     @Body() dto: ParcelsCreateRequestDTO,
   ): Promise<Record<string, Parcel> | HttpException> {
     try {
+      if (await this.repository.exist({ where: { sku: dto.sku } })) {
+        return new HttpException('SKU already exists', HttpStatus.BAD_REQUEST);
+      }
+
       const parcel = await this.repository.save(dto);
 
       return { parcel };

@@ -8,7 +8,7 @@ import {
 
 @Entity()
 export class Parcel {
-  @PrimaryColumn()
+  @PrimaryColumn({ unique: true })
   sku: string;
 
   @Column()
